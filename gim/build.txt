@@ -1,3 +1,0 @@
-displayName = The GIM Mod
-author = Guas, Ivymoth and Mediocre Pancake
-version = 0.1
