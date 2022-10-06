@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
-namespace GIMTestModMedPan.Items.Accessories
+namespace gim.Content.Items.Accessories
 {
     internal class SpectreFlower : ModItem
     {
