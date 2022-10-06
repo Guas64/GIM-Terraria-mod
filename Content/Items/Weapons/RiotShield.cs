@@ -43,7 +43,6 @@ namespace gim.Content.Items.Weapons
         {
             CreateRecipe()
                 .AddIngredient(ItemID.HallowedBar, 12)
-                .AddIngredient(ItemID.LaserRifle)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
         }
