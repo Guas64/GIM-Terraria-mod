@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
-namespace GIMTestModMedPan.Items.Accessories
+namespace GIM-Terraria-mod.Contet.Items.Accessories
 {
     internal class SpectralBelt : ModItem
     {
