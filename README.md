@@ -1,3 +1,2 @@
 
-banan funni
-true
+banan funni\ntrue
