@@ -20,7 +20,7 @@ namespace gim.Content.Items.Accessories
             Item.height = 16;
             Item.value = Item.buyPrice(gold: 4, silver: 50);
             Item.accessory = true;
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Yellow;
             Item.maxStack = 1;
             Item.CountsAsClass(DamageClass.Magic);
         }
