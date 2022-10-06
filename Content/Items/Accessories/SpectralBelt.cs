@@ -18,7 +18,7 @@ namespace gim.Content.Items.Accessories
         {
             Item.width = 16;
             Item.height = 16;
-            Item.value = Item.buyPrice(gold: 1, silver: 75);
+            Item.value = Item.buyPrice(gold: 4, silver: 50);
             Item.accessory = true;
             Item.rare = ItemRarityID.Blue;
             Item.maxStack = 1;
@@ -59,7 +59,7 @@ namespace gim.Content.Items.Accessories
         {
             CreateRecipe()
                 .AddIngredient(ModContent.ItemType<Items.Accessories.DashingBelt>(), 1)
-                .AddIngredient(ItemID.TatteredCloth, 1)
+                .AddIngredient(ItemID.AncientCloth, 1)
                 .AddIngredient(ItemID.Ectoplasm, 5)
                 .AddTile(TileID.Loom)
                 .Register();
