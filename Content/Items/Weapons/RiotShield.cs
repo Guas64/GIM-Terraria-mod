@@ -5,7 +5,7 @@ using Terraria.GameContent.Creative;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 
-namespace GIMTestModMedPan.Items.Weapons
+namespace gim.Content.Items.Weapons
 {
     internal class RiotShield : ModItem
     {
