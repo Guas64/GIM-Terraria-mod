@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
-namespace gim.Items.Accessories
+namespace gim.Content.Items.Accessories
 {
     internal class DashingBelt : ModItem
     {
