@@ -12,6 +12,8 @@ namespace gim.Content.Items.Accessories
             DisplayName.SetDefault("Spectral Bloom");
             Tooltip.SetDefault("16% reduced mana usage\nAutomatically use mana potions while needed\nReplaces Mana Sickness with Potion Sickness\nIf a mana potion is used while Potion Sickness is active, you gain increasingly powerful debuffs");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 25));
         }
 
         public override void SetDefaults()
