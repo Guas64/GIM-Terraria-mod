@@ -18,8 +18,8 @@ namespace gim.Content.Items.Accessories
 
         public override void SetDefaults()
         {
-            Item.width = 16;
-            Item.height = 16;
+            Item.width = 29;
+            Item.height = 33;
             Item.value = Item.buyPrice(gold: 5, silver: 75);
             Item.accessory = true;
             Item.rare = ItemRarityID.Yellow;
