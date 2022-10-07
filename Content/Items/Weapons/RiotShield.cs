@@ -30,7 +30,6 @@ namespace gim.Content.Items.Weapons
             Item.DamageType = DamageClass.MeleeNoSpeed;
             Item.useStyle = ItemUseStyleID.Guitar;
             Item.autoReuse = true;
-            Item.shootSpeed = 8f;
         }
         public override bool? UseItem(Player player)
         {
