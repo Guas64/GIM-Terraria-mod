@@ -32,6 +32,7 @@ namespace gim.Content.Items.Consumables
             Item.consumable = true;
             Item.rare = ItemRarityID.Purple;
             Item.value = Item.buyPrice(gold: 5);
+	    Item.buffType = 1;
         }
         public override bool? UseItem(Player player) //For some reason 'Item.consumable = true;' wasn't working, so this was the work around. Most likely a better way, but this works.
         {
