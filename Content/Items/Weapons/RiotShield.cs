@@ -1,4 +1,5 @@
-﻿using Terraria;
+using System;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
@@ -28,21 +29,25 @@ namespace gim.Content.Items.Weapons
             Item.useTime = 4;
             Item.useAnimation = 4;
             Item.DamageType = DamageClass.MeleeNoSpeed;
-            Item.useStyle = ItemUseStyleID.Guitar;
+            Item.useStyle = 5;
             Item.autoReuse = true;
         }
         public override bool? UseItem(Player player)
         {
-            player.AddBuff(BuffID.Slow,10);
+            player.AddBuff(BuffID.Slow, 10);
 
 
             return true;
         }
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-3, 0);
+        }
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.HallowedBar, 12)
-                .AddTile(TileID.MythrilAnvil)
+                .AddIngredient(ItemID.IronBar, 12)
+                .AddTile(TileID.Anvils)
                 .Register();
         }
     }
