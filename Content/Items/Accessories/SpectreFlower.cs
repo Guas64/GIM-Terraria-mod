@@ -12,7 +12,7 @@ namespace gim.Content.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spectral Bloom");
-            Tooltip.SetDefault("16% reduced mana usage\nAutomatically use mana potions while needed\nReplaces Mana Sickness with Potion Sickness\nIf a mana potion is used while Potion Sickness is active, you gain increasingly powerful debuffs");
+            Tooltip.SetDefault("16% reduced mana usage\nAutomatically use mana potions while needed\nIf visible, replaces Mana Sickness with Potion Sickness for 20 seconds\nWhile visible, if a mana potion is used while Potion Sickness is active, you gain increasingly more dangerous debuffs");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
             
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 25));
@@ -32,36 +32,39 @@ namespace gim.Content.Items.Accessories
             player.manaCost -= player.manaCost / 6;
             player.manaFlower = true;
 
-            if (player.manaSick == true && player.HasBuff(BuffID.CursedInferno) == true)
+            if (hideVisual == false) //Visible
             {
-                player.AddBuff(BuffID.Silenced, 60);
-                player.AddBuff(BuffID.Weak, 240);
-                player.AddBuff(BuffID.CursedInferno, 240);
-                player.AddBuff(BuffID.Ichor, 240);
-                player.AddBuff(BuffID.PotionSickness, 3600);
-            }
-            if (player.manaSick == true && player.HasBuff(BuffID.Ichor) == true)
-            {
-                player.AddBuff(BuffID.CursedInferno, 240);
-                player.AddBuff(BuffID.Weak, 240);
-                player.AddBuff(BuffID.Ichor, 240);
-                player.AddBuff(BuffID.PotionSickness, 3600);
-            }
-            if (player.manaSick == true && player.HasBuff(BuffID.Weak) == true)
-            {
-                player.AddBuff(BuffID.Weak, 240);
-                player.AddBuff(BuffID.Ichor, 240);
-                player.AddBuff(BuffID.PotionSickness, 3600);
-            }
-            if (player.manaSick == true && player.HasBuff(BuffID.PotionSickness) == true)
-            {
-                player.AddBuff(BuffID.Weak, 240);
-                player.AddBuff(BuffID.PotionSickness, 3600);
-            }
-            if (player.manaSick == true)
-            {
-                player.ClearBuff(BuffID.ManaSickness);
-                player.AddBuff(BuffID.PotionSickness, 1800);
+                if (player.manaSick == true && player.HasBuff(BuffID.CursedInferno) == true)
+                {
+                    player.AddBuff(BuffID.Silenced, 60);
+                    player.AddBuff(BuffID.Weak, 240);
+                    player.AddBuff(BuffID.CursedInferno, 240);
+                    player.AddBuff(BuffID.Ichor, 240);
+                    player.AddBuff(BuffID.PotionSickness, 1200);
+                }
+                if (player.manaSick == true && player.HasBuff(BuffID.Ichor) == true)
+                {
+                    player.AddBuff(BuffID.CursedInferno, 240);
+                    player.AddBuff(BuffID.Weak, 240);
+                    player.AddBuff(BuffID.Ichor, 240);
+                    player.AddBuff(BuffID.PotionSickness, 1200);
+                }
+                if (player.manaSick == true && player.HasBuff(BuffID.Weak) == true)
+                {
+                    player.AddBuff(BuffID.Weak, 240);
+                    player.AddBuff(BuffID.Ichor, 240);
+                    player.AddBuff(BuffID.PotionSickness, 1200);
+                }
+                if (player.manaSick == true && player.HasBuff(BuffID.PotionSickness) == true)
+                {
+                    player.AddBuff(BuffID.Weak, 240);
+                    player.AddBuff(BuffID.PotionSickness, 1200);
+                }
+                if (player.manaSick == true)
+                {
+                    player.ClearBuff(BuffID.ManaSickness);
+                    player.AddBuff(BuffID.PotionSickness, 1200);
+                }
             }
         }
         public override void AddRecipes()
