@@ -22,7 +22,7 @@ namespace gim.Content.Items.Weapons
             Item.height = 36;
             Item.rare = ItemRarityID.Blue;
             Item.maxStack = 1;
-            Item.knockBack = 10;
+            Item.knockBack = 5;
             Item.damage = 10;
             Item.crit = 5;
             Item.useTime = 4;
