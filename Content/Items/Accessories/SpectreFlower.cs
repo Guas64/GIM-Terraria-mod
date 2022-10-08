@@ -12,7 +12,7 @@ namespace gim.Content.Items.Accessories
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Spectral Bloom");
-            Tooltip.SetDefault("16% reduced mana usage\nAutomatically use mana potions while needed\nIf visible, replaces Mana Sickness with Potion Sickness for 20 seconds\nWhile visible, if a mana potion is used while Potion Sickness is active, you gain increasingly more dangerous debuffs");
+            Tooltip.SetDefault("16% reduced mana usage\nAutomatically use mana potions while needed\nEnemies are much less likely to target you\nIf visible, replaces Mana Sickness with Potion Sickness for 20 seconds\nWhile visible, if a mana potion is used while Potion Sickness is active, you gain increasingly more dangerous debuffs");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
             
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(3, 25));
@@ -31,6 +31,8 @@ namespace gim.Content.Items.Accessories
         {
             player.manaCost -= player.manaCost / 6;
             player.manaFlower = true;
+
+            player.aggro -= 600; //Slightly more than Putrid Scent and Arcane Flower's aggro reduction
 
             if (hideVisual == false) //Visible
             {
@@ -70,9 +72,8 @@ namespace gim.Content.Items.Accessories
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ModContent.ItemType<Items.Accessories.DashingBelt>(), 1)
-                .AddIngredient(ItemID.AncientCloth, 1)
-                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddIngredient(ItemID.ArcaneFlower)
+                .AddIngredient(ItemID.Ectoplasm, 6)
                 .AddTile(TileID.Loom)
                 .Register();
         }
