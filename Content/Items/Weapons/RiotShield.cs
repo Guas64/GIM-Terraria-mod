@@ -30,6 +30,7 @@ namespace gim.Content.Items.Weapons
             Item.useAnimation = 4;
             Item.DamageType = DamageClass.MeleeNoSpeed;
             Item.useStyle = 5;
+            Item.useTurn = true;
             Item.autoReuse = true;
         }
         public override bool? UseItem(Player player)
